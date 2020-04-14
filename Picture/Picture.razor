@@ -1,0 +1,16 @@
+﻿<picture class="@CssClass" >
+    @foreach(var source in Model.Sources)
+    {
+        <source srcset="@source.Srcset" media="@source.Media" />
+    }
+    <img src="@Model.Src" alt="@Model.Alt" />
+</picture>
+
+
+@code {
+    [Parameter]
+    public JS.Utils.RazorTemplates.Model.Picture Model { get; set; }
+
+    [Parameter]
+    public string CssClass { get; set; }
+}
